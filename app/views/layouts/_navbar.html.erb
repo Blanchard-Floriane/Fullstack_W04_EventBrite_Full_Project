@@ -16,11 +16,21 @@
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon Compte</a>
         <ul class="dropdown-menu">
-           
-          <li><%= link_to "Mon profil", users_show_path, class:"dropdown-item"%></li>
-          <li><%= link_to "S'inscrire'", new_user_registration_path, class:"dropdown-item"%></li>
-          <li><%= link_to "Se connecter", new_user_session_path, class:"dropdown-item"%></li>
-          
+          <% if user_signed_in? == true %>
+            <li>
+              <%= link_to "Mon profil", user_path(current_user.id), class:"dropdown-item"%>
+            </li>
+            <li>
+              <%= button_to "Se déconnecter", destroy_user_session_path(current_user.id), method: :delete, data: {turbo_method: :delete} %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "S'inscrire", new_user_registration_path, class:"dropdown-item"%>
+            </li>
+            <li>
+              <%= link_to "Se connecter", new_user_session_path, class:"dropdown-item"%>
+            </li>
+          <% end %>
         </ul>
       </li>
       </ul>

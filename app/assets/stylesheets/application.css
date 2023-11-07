@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ .nav-custom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1e1a45;
+  z-index: 9999;
+}
+
+.custom-alerts {
+  position: fixed;
+  top: 10ch;
+  right: 10ch;
+  z-index: 9999;
+  display: block;
+}
