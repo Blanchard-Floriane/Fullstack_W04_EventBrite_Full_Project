@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   #quid de l'admin part
   has_many :attendances
-  has_many :events, through: :attendances
+  has_many :users, through: :attendances
 
   validates :start_date, presence: true
   #code pour indiquer pas de modif ou créa dans le passé
