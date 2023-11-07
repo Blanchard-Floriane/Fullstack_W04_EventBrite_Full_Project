@@ -6,7 +6,7 @@ class Users::PasswordsController < Devise::PasswordsController
   #   super
   # end
 
-  # POST /resource/password
+  #POST /resource/password
   # def create
   #   super
   # end
