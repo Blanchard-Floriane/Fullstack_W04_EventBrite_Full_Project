@@ -1,38 +1,35 @@
 <!--Header contain only my navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark ">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <%= link_to "Saint-Loup Event", root_path, class:"navbar-brand"%>
+    <%= link_to "SAINT-LOUP-EVENT", root_path, class:"navbar-brand"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <%= link_to "Accueil", root_path, class:"nav-link active"%>
+        <li class="nav-item me-3">
+          <%= link_to "CRÉER UN ÉVÉNEMENT", new_event_path, class:"nav-link-custom"%>
         </li>
-        <li class="nav-item">
-          <%= link_to "Créer un événement", new_event_path, class:"nav-link"%>
+        <li class="d-flex nav-item dropdown ">
+          <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MON ESPACE</a>
+          <ul class="dropdown-menu">
+            <% if user_signed_in? == false %>
+              <li>
+                <%= link_to "S'inscrire", new_user_registration_path, class:"dropdown-item"%>
+              </li>
+              <li>
+                <%= link_to "Se connecter", new_user_session_path, class:"dropdown-item"%>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Mon profil", user_path(current_user), class:"dropdown-item"%>
+              </li>
+              <li>
+                <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class:"dropdown-item"%>
+              </li>
+            <% end %>
+          </ul>
         </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon Compte</a>
-        <ul class="dropdown-menu">
-          <% if user_signed_in? == false %>
-            <li>
-              <%= link_to "S'inscrire", new_user_registration_path, class:"dropdown-item"%>
-            </li>
-            <li>
-              <%= link_to "Se connecter", new_user_session_path, class:"dropdown-item"%>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Mon profil", user_path(current_user), class:"dropdown-item"%>
-            </li>
-            <li>
-              <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class:"dropdown-item"%>
-            </li>
-          <% end %>
-        </ul>
-      </li>
       </ul>
     </div>
   </div>

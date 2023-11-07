@@ -1,14 +1,39 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Events</h1>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+<div class="container col-xxl-8 px-4 py-3">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <%= image_tag("hero_cover.png", class: "d-block mx-lg-auto img-fluid", alt: "Une illustration flat d'un événement", style: "width: 800; heigh: 600, loading: lazy")%>
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-6 fw-bold lh-1 mb-3 title-color">Ne perdez plus un instant et remplissez votre vie de moments magiques !</h1>
+      <p class="lead medium-title-color">Puisque la vie est trop courte, Saint-Loup Event s'occupe de vous proposer, avec l'aide de l'ensemble de la communauté, des événements qui rempliront votre mémoire de magie. Ne tardez plus, assistez à l'un de nos événements ou créez-en un !</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <%= link_to "Créer un Événement", new_event_path, class:"btn-mustard btn-lg px-4 py-2 my-3 me-md-2"%>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to "New event", new_event_path %>
+<div class="container col-xxl-8 px-4 py-3">
+  <h2 class="title-color">Voici nos derniers événements</h2>
+</div>
+
+<div class="row px-4 py-2">
+  <% @events.each do |event| %>
+    <%= render event %> 
+      <div class="col-sm-4 my-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text">Date : <%= event.start_date %></p>
+            <div class="row">
+              <div class="text-end">
+                <%= link_to "Show this event", event, class:"btn me-2" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
