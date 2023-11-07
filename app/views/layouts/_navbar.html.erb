@@ -18,10 +18,10 @@
         <ul class="dropdown-menu">
           <% if user_signed_in? == true %>
             <li>
-              <%= link_to "Mon profil", user_path(current_user.id), class:"dropdown-item"%>
+              <%= link_to "Mon profil", user_path(current_user), class:"dropdown-item"%>
             </li>
             <li>
-              <%= button_to "Se déconnecter", destroy_user_session_path(current_user.id), method: :delete, data: {turbo_method: :delete} %>
+              <%= button_to "Se déconnecter", destroy_user_session_path(current_user), method: :delete, data: {turbo_method: :delete} %>
             </li>
           <% else %>
             <li>
