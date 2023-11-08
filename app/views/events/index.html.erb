@@ -17,21 +17,23 @@
   <h2 class="title-color">Voici nos derniers événements</h2>
 </div>
 
-<div class="row px-4 py-2">
-  <% @events.each do |event| %>
-    <%= render event %> 
-      <div class="col-sm-4 my-4">
-        <div class="card">
+<div class="container d-flex justify-content-center background-custom">
+  <div class="row col-xxl-8 px-4 py-2">
+    <% @events.each do |event| %>
+      <div class="col-sm-8 col-lg-4">
+        <div class="card my-4">
           <div class="card-body">
-            <h5 class="card-title"><%= event.title %></h5>
+            <%= render event %> 
+            <h5 class="title-color"><%= event.title %></h5>
             <p class="card-text">Date : <%= event.start_date %></p>
             <div class="row">
               <div class="text-end">
-                <%= link_to "Show this event", event, class:"btn me-2" %>
+                <%= link_to "En savoir +", event, class:"btn-mustard m-2 py-1 px-2" %>
               </div>
             </div>
           </div>
         </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
