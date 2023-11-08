@@ -17,11 +17,16 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    if current_user != @event.administrator
+      redirect_to event_url(@event)
+    end
   end
 
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    @event.administrator = current_user #c'est cette ligne qui ajoute l'info de l'admin_id à la création d'un event
+    puts @event 
 
     respond_to do |format|
       if @event.save
