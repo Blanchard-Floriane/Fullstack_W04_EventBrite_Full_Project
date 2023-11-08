@@ -53,6 +53,7 @@ events.shuffle.each do |event|
     title: title,
     description: description,
     price: price,
-    location: location
+    location: location,
+    administrator_id: User.all.sample.id
     )
 end
