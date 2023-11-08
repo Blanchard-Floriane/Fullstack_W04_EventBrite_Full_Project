@@ -1,15 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<div class="mt-2 mt-md-5">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @event %>
+  <%= render @event %>
 
-<div>
-  <h5 class="title-color"><%= @event.title %></h5>
-  <p>Date : <%= @event.start_date %></p>
-  <p>Durée : <%= @event.duration / 60 %> heure.s</p>
-  <p>Description : <%= @event.description %></p>
-  <p>Prix : <%= @event.price %> euros</p>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
+  <div>
+    <h5 class="title-color"><%= @event.title %></h5>
+    <p>Date : <%= @event.start_date %></p>
+    <p>Durée : <%= @event.duration / 60 %> heure.s</p>
+    <p>Description : <%= @event.description %></p>
+    <p>Prix : <%= @event.price %> euros</p>
+    <%= link_to "Edit this event", edit_event_path(@event) %> |
+    <%= link_to "Back to events", events_path %>
 
-  <%= button_to "Destroy this event", @event, method: :delete %>
+    <%= button_to "Destroy this event", @event, method: :delete %>
+  </div>
 </div>

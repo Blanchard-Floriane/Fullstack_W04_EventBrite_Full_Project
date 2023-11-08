@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :attendances
   has_many :events, through: :attendances
-  has_many :authored_events, foreign_key: 'user_id', class_name: "Event" #cf. cours sur les tips BDD
+  has_many :authored_events, foreign_key: :administrator_id, class_name: "Event" #cf. cours sur les tips BDD
 
   after_create :welcome_send
 
