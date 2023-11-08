@@ -3,6 +3,11 @@
 <%= render @event %>
 
 <div>
+  <h5 class="title-color"><%= @event.title %></h5>
+  <p>Date : <%= @event.start_date %></p>
+  <p>Durée : <%= @event.duration / 60 %> heure.s</p>
+  <p>Description : <%= @event.description %></p>
+  <p>Prix : <%= @event.price %> euros</p>
   <%= link_to "Edit this event", edit_event_path(@event) %> |
   <%= link_to "Back to events", events_path %>
 
