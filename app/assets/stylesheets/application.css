@@ -75,3 +75,20 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
   }
+
+.txt-p {
+  color: #002060;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.small-link {
+  color: #002060;
+  font-size: 15px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.small-link:hover {
+  text-decoration: underline;
+}
