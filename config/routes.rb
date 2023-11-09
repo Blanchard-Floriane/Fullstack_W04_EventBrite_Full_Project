@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :events
   devise_for :users
   resources :users
+
+  #root 'orders#new'
+  resources :orders, only: [:new, :create]
 end
