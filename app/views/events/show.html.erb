@@ -1,4 +1,4 @@
-<div class="mt-2 mt-md-5">
+<div class="mt-2 mt-md-5 mx-5">
   <p style="color: green"><%= notice %></p>
 
   <%= render @event %>
@@ -9,9 +9,12 @@
     <p>Durée : <%= @event.duration / 60 %> heure.s</p>
     <p>Description : <%= @event.description %></p>
     <p>Prix : <%= @event.price %> euros</p>
+    <%= button_to "Participer à cet événement", checkout_create_path(total: @event.price), class: "btn btn-primary", data: {turbo: false} %>
+    <br>
     <%= link_to "Edit this event", edit_event_path(@event) %> |
     <%= link_to "Back to events", events_path %>
-
+    <br>
+    <br>
     <%= button_to "Destroy this event", @event, method: :delete %>
   </div>
 </div>
