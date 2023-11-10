@@ -10,7 +10,7 @@
     <p>Description : <%= @event.description %></p>
     <p>Prix : <%= @event.price %> euros</p>
     <% if user_signed_in? == true && current_user != @event.administrator %>
-      <%= button_to "Participer à cet événement", checkout_create_path(total: @event.price), class: "btn btn-primary", data: {turbo: false} %>
+      <%= button_to "Participer à cet événement", checkout_create_path(total: @event.price, event_id: @event), class: "btn btn-primary", data: {turbo: false} %>
     <% elsif current_user == @event.administrator %>
       <%= link_to "Edit this event", edit_event_path(@event) %>
       <br>
