@@ -1,0 +1,18 @@
+.nav-custom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+.nav-link-custom {
+  color: #002060;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-link-custom:hover {
+  text-decoration: underline;
+  color: #83b9dc;
+}

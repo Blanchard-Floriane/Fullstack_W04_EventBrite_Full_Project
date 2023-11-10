@@ -1,0 +1,60 @@
+.custom-alerts {
+  position: fixed;
+  top: 10ch;
+  right: 10ch;
+  z-index: 9999;
+  display: block;
+}
+
+.btn-mustard {
+  background-color: #ffac30;
+  font-size: 1.25rem;
+  color: #ffffff;
+  border-radius: 0.5ch;
+  border-color: transparent;
+  text-decoration: none;
+}
+
+.btn-mustard:hover {
+  background-color: #83b9dc;
+}
+
+.title-color {
+  color: #002060;
+}
+
+.medium-title-color {
+  color: #83B9DC;
+}
+
+.background-custom {
+  background-color: #f5f5f5;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  }
+
+.txt-p {
+  color: #002060;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.small-link {
+  color: #002060;
+  font-size: 15px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.small-link:hover {
+  text-decoration: underline;
+}
